@@ -167,6 +167,8 @@ bool Shader::compile()
         glGetProgramInfoLog(shaderProgHandle, length, NULL, info);
         std::cout << "glLinkProgram failed: \n" << info << std::endl;
         delete [] info;
+
+        return false;
     }
     //glDetachShader(shaderProgHandle, vertShaderHandle);
     //glDetachShader(shaderProgHandle, fragShaderHandle);
