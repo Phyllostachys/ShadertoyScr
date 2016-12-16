@@ -1,3 +1,18 @@
+## Build
+### Windows 64-bit
+Run the following:
+```
+vcvars64.bat
+build_win64.bat
+```
+### Windows mingw-w64
+Run the following:
+```
+build_mingw-w64.sh
+```
+
+Output is sent to the bin folder.
+
 ## Examples
 Run some of the shaders that come with this like this:
 ```
