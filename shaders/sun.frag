@@ -6,6 +6,7 @@ uniform vec4      iMouse;                // mouse pixel coords. xy: current (if 
 in vec2 TexCoord;
 out vec4 outColor;
 uniform sampler2D textureData;
+/******************************************************************************/
 
 // Panteleymonov A K 2015
 
@@ -211,10 +212,8 @@ float sphereZero(vec3 ray,vec3 pos,float r)
     return s;
 }
 
-//void mainImage( out vec4 fragColor, in vec2 fragCoord )
-void main()
+void mainImage( out vec4 fragColor, in vec2 fragCoord )
 {
-    vec4 fragColor;
     vec2 p = (-iResolution.xy + 2.0*gl_FragCoord.xy) / iResolution.y;
 
     float time=iGlobalTime*1.0;
@@ -278,7 +277,6 @@ void main()
 
     fragColor = max( vec4(0.0), fragColor );
     fragColor = min( vec4(1.0), fragColor );
-    outColor = fragColor;
 }
 
 //
@@ -518,3 +516,9 @@ Shader "Space/Star/Sun"
     }
 }
 */
+
+/******************************************************************************/
+void main()
+{
+    mainImage(outColor, gl_FragCoord.xy);
+}

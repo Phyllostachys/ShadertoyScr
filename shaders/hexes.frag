@@ -6,6 +6,7 @@ uniform vec4      iMouse;                // mouse pixel coords. xy: current (if 
 in vec2 TexCoord;
 out vec4 outColor;
 uniform sampler2D textureData;
+/******************************************************************************/
 
 const float v = 151.0;
 const float r = 32.0;
