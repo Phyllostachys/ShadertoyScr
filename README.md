@@ -28,5 +28,6 @@ If you run ShadertoyScr without any arguments then it'll use hexes.frag.
 
 ## TODO
 - [ ] Make fullscreen on every monitor work.
+- [ ] Add in other shader inputs given on Shadertoy (iChannel0..3, et al).
 - [ ] Allow passing in of Shadertoy ids.
 - [ ] Add more cool shaders, of course.
