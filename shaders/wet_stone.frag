@@ -1,14 +1,3 @@
-#version 430
-
-uniform vec3      iResolution;           // viewport resolution (in pixels)
-uniform float     iGlobalTime;           // shader playback time (in seconds)
-uniform vec4      iMouse;                // mouse pixel coords. xy: current (if MLB down), zw: click
-in vec2 TexCoord;
-out vec4 outColor;
-uniform sampler2D textureData;
-uniform samplerCube iChannel0;
-/******************************************************************************/
-
 /*
 "Wet stone" by Alexander Alekseev aka TDM - 2014
 License Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -256,10 +245,4 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord ) {
     float vgn = smoothstep(1.2,0.7,abs(iuv.y)) * smoothstep(1.1,0.8,abs(iuv.x));
     color *= 1.0 - (1.0 - vgn) * 0.15;
     fragColor = vec4(color,1.0);
-}
-
-/******************************************************************************/
-void main()
-{
-    mainImage(outColor, gl_FragCoord.xy);
 }

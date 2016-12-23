@@ -1,13 +1,3 @@
-#version 430
-
-uniform vec3      iResolution;           // viewport resolution (in pixels)
-uniform float     iGlobalTime;           // shader playback time (in seconds)
-uniform vec4      iMouse;                // mouse pixel coords. xy: current (if MLB down), zw: click
-in vec2 TexCoord;
-out vec4 outColor;
-uniform sampler2D textureData;
-/******************************************************************************/
-
 // Panteleymonov A K 2015
 
 //
@@ -516,9 +506,3 @@ Shader "Space/Star/Sun"
     }
 }
 */
-
-/******************************************************************************/
-void main()
-{
-    mainImage(outColor, gl_FragCoord.xy);
-}

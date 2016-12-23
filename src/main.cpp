@@ -58,6 +58,25 @@ int main(int argc, char** argv)
     }
     std::cout << "Using shader path: " << shadertoyShaderPath << "\n";
     Shader s("shaders/simple.vert", shadertoyShaderPath);
+
+    std::string header =
+        "#version 430\n"
+        "uniform vec3      iResolution;           // viewport resolution (in pixels)\n"
+        "uniform float     iGlobalTime;           // shader playback time (in seconds)\n"
+        "uniform vec4      iMouse;                // mouse pixel coords. xy: current (if MLB down), zw: click\n"
+        "in vec2 TexCoord;"
+        "out vec4 outColor;"
+        "uniform sampler2D textureData;"
+        "uniform samplerCube iChannel0;\n\n";
+    s.addFragHeader(header);
+
+    std::string footer =
+        "\n\nvoid main()"
+        "{"
+        "    mainImage(outColor, gl_FragCoord.xy);"
+        "}";
+    s.addFragFooter(footer);
+
     if(!s.compile()) {
         std::cout << "Some error happened while creating shaders\n";
         return -1;

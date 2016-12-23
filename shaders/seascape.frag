@@ -1,14 +1,3 @@
-#version 430
-
-uniform vec3      iResolution;           // viewport resolution (in pixels)
-uniform float     iGlobalTime;           // shader playback time (in seconds)
-uniform vec4      iMouse;                // mouse pixel coords. xy: current (if MLB down), zw: click
-in vec2 TexCoord;
-out vec4 outColor;
-uniform sampler2D textureData;
-uniform samplerCube iChannel0;
-/******************************************************************************/
-
 /*
  * "Seascape" by Alexander Alekseev aka TDM - 2014
  * License Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -192,10 +181,4 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord ) {
 
     // post
     fragColor = vec4(pow(color,vec3(0.75)), 1.0);
-}
-
-/******************************************************************************/
-void main()
-{
-    mainImage(outColor, gl_FragCoord.xy);
 }

@@ -1,13 +1,3 @@
-#version 430
-
-uniform vec3      iResolution;           // viewport resolution (in pixels)
-uniform float     iGlobalTime;           // shader playback time (in seconds)
-uniform vec4      iMouse;                // mouse pixel coords. xy: current (if MLB down), zw: click
-in vec2 TexCoord;
-out vec4 outColor;
-uniform sampler2D textureData;
-/******************************************************************************/
-
 // Matroshka! - 2016 Martijn Steinrucken - BigWings
 // countfrolic@gmail.com
 // License Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
@@ -1162,10 +1152,4 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
     col *= 1.-dot(UV, UV);      // add vignette
 
     fragColor = vec4(col, .1);
-}
-
-/******************************************************************************/
-void main()
-{
-    mainImage(outColor, gl_FragCoord.xy);
 }

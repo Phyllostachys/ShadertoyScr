@@ -1,13 +1,3 @@
-#version 430
-
-uniform vec3      iResolution;           // viewport resolution (in pixels)
-uniform float     iGlobalTime;           // shader playback time (in seconds)
-uniform vec4      iMouse;                // mouse pixel coords. xy: current (if MLB down), zw: click
-in vec2 TexCoord;
-out vec4 outColor;
-uniform sampler2D textureData;
-/******************************************************************************/
-
 // Created by Stephane Cuillerdier - Aiekick/2015
 // License Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
 
@@ -236,10 +226,4 @@ vec4 Image(in vec2 fragCoord )
 void mainImage( out vec4 fragColor, in vec2 fragCoord )
 {
     fragColor = Image(fragCoord);
-}
-
-/******************************************************************************/
-void main()
-{
-    mainImage(outColor, gl_FragCoord.xy);
 }

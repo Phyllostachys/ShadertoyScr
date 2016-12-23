@@ -111,6 +111,18 @@ static bool isShaderStatusGood(GLint shaderHandle, GLenum statusType, char error
     }
 }
 
+void Shader::addFragHeader(std::string header)
+{
+    std::string newFragString = header + fragSource;
+    fragSource = newFragString;
+}
+
+void Shader::addFragFooter(std::string footer)
+{
+    std::string newFragString = fragSource + footer;
+    fragSource = newFragString;
+}
+
 bool Shader::compile()
 {
     char buffer[1024];
@@ -170,10 +182,10 @@ bool Shader::compile()
 
         return false;
     }
-    //glDetachShader(shaderProgHandle, vertShaderHandle);
-    //glDetachShader(shaderProgHandle, fragShaderHandle);
-    //glDeleteShader(vertShaderHandle);
-    //glDeleteShader(fragShaderHandle);
+    glDetachShader(shaderProgHandle, vertShaderHandle);
+    glDetachShader(shaderProgHandle, fragShaderHandle);
+    glDeleteShader(vertShaderHandle);
+    glDeleteShader(fragShaderHandle);
 
     compiled = true;
     return true;

@@ -21,7 +21,7 @@ ShadertoyScr shaders/hexes.frag
 If you run ShadertoyScr without any arguments then it'll use hexes.frag.
 
 ## Shaders
-- [Metaballs Quintic](https://www.shadertoy.com/view/ld2GRz) was made by iq and Hexes was inspired by [this shader from Shadertoy](https://www.shadertoy.com/view/Xd2GR3) (I think) by [iq, Inigo Quilez](http://www.iquilezles.org).
+- [Metaballs Quintic](https://www.shadertoy.com/view/ld2GRz) was made by iq and Hexes was inspired by [this shader from Shadertoy](https://www.shadertoy.com/view/Xd2GR3) (I think) also by [iq, Inigo Quilez](http://www.iquilezles.org).
 - [Awesome star](https://www.shadertoy.com/view/4lfSzS) by [foxes](www.panteleymonov.ru)
 - [Matroshka](https://www.shadertoy.com/view/XlcSzM) by [BigWIngs](https://www.shadertoy.com/user/BigWIngs)
 - [Ring Twister](https://www.shadertoy.com/view/Xt23z3) by [Flyguy](https://www.shadertoy.com/user/Flyguy)

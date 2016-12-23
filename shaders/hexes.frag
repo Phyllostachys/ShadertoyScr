@@ -1,13 +1,3 @@
-#version 430
-
-uniform vec3      iResolution;           // viewport resolution (in pixels)
-uniform float     iGlobalTime;           // shader playback time (in seconds)
-uniform vec4      iMouse;                // mouse pixel coords. xy: current (if MLB down), zw: click
-in vec2 TexCoord;
-out vec4 outColor;
-uniform sampler2D textureData;
-/******************************************************************************/
-
 const float v = 151.0;
 const float r = 32.0;
 
@@ -41,9 +31,9 @@ float URA(in vec2 p)
     return rz;
 }
 
-void main()
+void mainImage( out vec4 fragColor, in vec2 fragCoord )
 {
-    vec2 p = gl_FragCoord.xy/iResolution.xy*2.-1.;
+    vec2 p = fragCoord.xy/iResolution.xy*2.-1.;
     vec2 q = p;
     p.x *= iResolution.x/iResolution.y;
 
@@ -58,5 +48,5 @@ void main()
 
     col *= smoothstep(1.01,.95,max(abs(q.x),abs(q.y)));
 
-    outColor = vec4( col, 1.0 ); //outColor = texture(textureData, TexCoord);
+    fragColor = vec4( col, 1.0 ); //outColor = texture(textureData, TexCoord);
 }

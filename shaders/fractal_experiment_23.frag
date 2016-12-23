@@ -1,14 +1,3 @@
-#version 430
-
-uniform vec3      iResolution;           // viewport resolution (in pixels)
-uniform float     iGlobalTime;           // shader playback time (in seconds)
-uniform vec4      iMouse;                // mouse pixel coords. xy: current (if MLB down), zw: click
-in vec2 TexCoord;
-out vec4 outColor;
-uniform sampler2D textureData;
-uniform samplerCube iChannel0;
-/******************************************************************************/
-
 // z * z
 vec2 zmul(vec2 a, vec2 b)
 {
@@ -52,10 +41,4 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
     float sit = it-it/(log2(log2(dot(z,z))));
 
     fragColor = 0.5 + 0.5 * cos( 3. + sit*0.2 + vec4(0,0.6,1,1));
-}
-
-/******************************************************************************/
-void main()
-{
-    mainImage(outColor, gl_FragCoord.xy);
 }
