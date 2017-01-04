@@ -27,6 +27,7 @@ If you run ShadertoyScr without any arguments then it'll use hexes.frag.
 - [Ring Twister](https://www.shadertoy.com/view/Xt23z3) by [Flyguy](https://www.shadertoy.com/user/Flyguy)
 - [Alien Cavern](https://www.shadertoy.com/view/XljGR3), [Fractal Experiment 23](https://www.shadertoy.com/view/MlcXRl), [Ray Marching Experiement 60](https://www.shadertoy.com/view/lttXDn), and [Tunnel Beauty 7](https://www.shadertoy.com/view/XltSDn) are by [aiekick](https://www.shadertoy.com/user/aiekick).
 - [Seascape](https://www.shadertoy.com/view/Ms2SD1) and [Wet stone](https://www.shadertoy.com/view/ldSSzV) by [TDM](https://www.shadertoy.com/user/TDM).
+- [Plasma Globe](https://www.shadertoy.com/view/XsjXRm) by [nimitz](https://www.shadertoy.com/user/nimitz).
 
 ## TODO
 - [ ] Make fullscreen on every monitor work.
