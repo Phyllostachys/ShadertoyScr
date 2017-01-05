@@ -51,7 +51,7 @@ int main(int argc, char** argv)
     }
 
     // Check if we are uses a default shader or a passed in shader
-    std::string shadertoyShaderPath("shaders/hexes.frag");
+    std::string shadertoyShaderPath("shaders/ring_twister.frag");
     std::cout << "argc: " << argc << "\n";
     if (argc > 1) {
         shadertoyShaderPath = argv[1];
