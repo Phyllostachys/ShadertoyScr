@@ -28,6 +28,7 @@ If you run ShadertoyScr without any arguments then it'll use ring_twister.frag.
 - [Alien Cavern](https://www.shadertoy.com/view/XljGR3), [Fractal Experiment 23](https://www.shadertoy.com/view/MlcXRl), [Ray Marching Experiement 60](https://www.shadertoy.com/view/lttXDn), and [Tunnel Beauty 7](https://www.shadertoy.com/view/XltSDn) are by [aiekick](https://www.shadertoy.com/user/aiekick).
 - [Seascape](https://www.shadertoy.com/view/Ms2SD1) and [Wet stone](https://www.shadertoy.com/view/ldSSzV) by [TDM](https://www.shadertoy.com/user/TDM).
 - [Plasma Globe](https://www.shadertoy.com/view/XsjXRm) and [HURA Generator](https://www.shadertoy.com/view/MtlXD8) by [nimitz](https://www.shadertoy.com/user/nimitz).
+- [Electron](https://www.shadertoy.com/view/MslGRn) by [gopher](https://www.shadertoy.com/user/gopher).
 
 ## TODO
 - [ ] Make fullscreen on every monitor work.

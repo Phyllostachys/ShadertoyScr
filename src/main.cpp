@@ -8,14 +8,15 @@
 #include <GLFW/glfw3.h>
 
 //#include "lodepng.h"
-#include "Shader.h"
+#include "shader.h"
 
 #define GLSL(x) #x
 
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mode);
+void resize_callback(GLFWwindow* window, int width, int height);
 
-int main(int argc, char** argv)
-{
+int width, height;
+int main(int argc, char** argv) {
     // Setup GLFW
     glfwInit();
 
@@ -24,7 +25,6 @@ int main(int argc, char** argv)
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 
-    int width, height;
     GLFWwindow *window;
 #define FULLSCREEN 0
 #if FULLSCREEN
@@ -39,6 +39,7 @@ int main(int argc, char** argv)
 
     glfwMakeContextCurrent(window);
     glfwSetKeyCallback(window, key_callback);
+    glfwSetWindowSizeCallback(window, resize_callback);
 
     int count = 0;
     glfwGetMonitors(&count);
@@ -55,6 +56,8 @@ int main(int argc, char** argv)
     std::cout << "argc: " << argc << "\n";
     if (argc > 1) {
         shadertoyShaderPath = argv[1];
+    } else {
+        std::cout << "Usage: " << argv[0] << " <shadertoy frag shader>\n";
     }
     std::cout << "Using shader path: " << shadertoyShaderPath << "\n";
     Shader s("shaders/simple.vert", shadertoyShaderPath);
@@ -67,12 +70,11 @@ int main(int argc, char** argv)
         "in vec2 TexCoord;"
         "out vec4 outColor;"
         "uniform sampler2D textureData;"
-        "uniform samplerCube iChannel0;\n\n";
+        "uniform sampler2D iChannel0;\n\n";
     s.addFragHeader(header);
 
     std::string footer =
-        "\n\nvoid main()"
-        "{"
+        "\n\nvoid main() {"
         "    mainImage(outColor, gl_FragCoord.xy);"
         "}";
     s.addFragFooter(footer);
@@ -164,8 +166,14 @@ int main(int argc, char** argv)
     return 0;
 }
 
-void key_callback(GLFWwindow* window, int key, int scancode, int action, int mode)
-{
-    if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
+void key_callback(GLFWwindow* window, int key, int scancode, int action, int mode) {
+    if (/*key == GLFW_KEY_ESCAPE &&*/ action == GLFW_PRESS) {
         glfwSetWindowShouldClose(window, GL_TRUE);
+    }
+}
+
+void resize_callback(GLFWwindow* window, int w, int h) {
+    width = w;
+    height = h;
+    glViewport(0, 0, width, height);
 }
