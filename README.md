@@ -1,3 +1,6 @@
+# ShadertoyScr
+Use [Shadertoy](https://www.shadertoy.com/) screen space shaders as a screen saver.
+
 ## Build
 ### Windows 64-bit
 Run the following:
