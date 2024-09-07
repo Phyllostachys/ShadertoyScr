@@ -2,29 +2,22 @@
 Use [Shadertoy](https://www.shadertoy.com/) screen space shaders as a screen saver.
 
 ## Build
-### Windows 64-bit
-Run the following:
+### Windows
+Make sure you have `vcpkg` and `xmake` installed, perhaps from [`scoop`](https://scoop.sh/). Then run the following:
 ```
-vcvars64.bat
-build_win64.bat
+xmake
+xmake install --installdir=bin
 ```
-### Windows mingw-w64
-Run the following:
-```
-build_mingw-w64.sh
-```
-
-Output is sent to the bin folder.
 
 ## Examples
-Run some of the shaders that come with this like this:
+To run some of the shaders that come with this:
 ```
-ShadertoyScr shaders/ring_twister.frag
+./bin/ShadertoyScr <path to shader in ./shaders/>
 ```
 If you run ShadertoyScr without any arguments then it'll use ring_twister.frag.
 
 ## Shaders
-- [Metaballs Quintic](https://www.shadertoy.com/view/ld2GRz) by [iq, Inigo Quilez](http://www.iquilezles.org).
+- [Metaballs Quintic](https://www.shadertoy.com/view/ld2GRz) and [Slisesix](https://www.shadertoy.com/view/NtlSDs) by [iq, Inigo Quilez](http://www.iquilezles.org).
 - [Awesome star](https://www.shadertoy.com/view/4lfSzS) by [foxes](www.panteleymonov.ru)
 - [Matroshka](https://www.shadertoy.com/view/XlcSzM) by [BigWIngs](https://www.shadertoy.com/user/BigWIngs)
 - [Ring Twister](https://www.shadertoy.com/view/Xt23z3) by [Flyguy](https://www.shadertoy.com/user/Flyguy)
