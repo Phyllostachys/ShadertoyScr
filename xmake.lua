@@ -1,11 +1,15 @@
 add_rules("mode.debug", "mode.release")
 
-add_requires("vcpkg::glad", "vcpkg::glfw3", "vcpkg::lodepng")
+if is_os("windows") then
+	add_requires("vcpkg::glad", "vcpkg::glfw3", "vcpkg::lodepng")
+end
 target("ShadertoyScr")
-    set_kind("binary")
-    add_files("src/*.cpp")
-    add_packages("vcpkg::glad", "vcpkg::glfw3")
-    add_syslinks("user32", "shell32", "gdi32")
+set_kind("binary")
+add_files("src/*.cpp")
+add_packages("vcpkg::glad", "vcpkg::glfw3")
+if is_os("windows") then
+	add_syslinks("user32", "shell32", "gdi32")
+end
 
 --
 -- If you want to known more usage about xmake, please see https://xmake.io
@@ -75,4 +79,3 @@ target("ShadertoyScr")
 --
 -- @endcode
 --
-
