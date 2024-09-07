@@ -8,7 +8,7 @@
 #include <GLFW/glfw3.h>
 
 //#include "lodepng.h"
-#include "shader.h"
+#include "shader.hpp"
 
 #define GLSL(x) #x
 

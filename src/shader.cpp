@@ -2,7 +2,7 @@
 #include <iostream>
 #include <glad/glad.h>
 
-#include "shader.h"
+#include "shader.hpp"
 
 // src - a file that has been opened already
 // dest - a std::string where the contents of src will be put into
