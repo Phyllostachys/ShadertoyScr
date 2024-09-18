@@ -6,8 +6,8 @@ end
 target("ShadertoyScr")
 set_kind("binary")
 add_files("src/*.cpp")
-add_packages("vcpkg::glad", "vcpkg::glfw3")
 if is_os("windows") then
+	add_packages("vcpkg::glad", "vcpkg::glfw3")
 	add_syslinks("user32", "shell32", "gdi32")
 end
 
