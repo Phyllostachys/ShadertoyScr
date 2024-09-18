@@ -1,7 +1,12 @@
 add_rules("mode.debug", "mode.release")
 
 if is_os("windows") then
-	add_requires("vcpkg::glad", "vcpkg::glfw3", "vcpkg::lodepng")
+	add_requires("vcpkg::glad", "vcpkg::glfw3")
+	-- add_requires("vcpkg::lodepng")
+else
+	add_requires("glad")
+	add_requires("glfw3", {system = true})
+	-- add_requires("lodepng", {system = true})
 end
 target("ShadertoyScr")
 set_kind("binary")
@@ -9,6 +14,8 @@ add_files("src/*.cpp")
 if is_os("windows") then
 	add_packages("vcpkg::glad", "vcpkg::glfw3")
 	add_syslinks("user32", "shell32", "gdi32")
+else
+	add_packages("glad", "glfw3")
 end
 
 --
