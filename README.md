@@ -6,7 +6,7 @@ Use [Shadertoy](https://www.shadertoy.com/) screen space shaders as a screen sav
 Make sure you have `vcpkg` and `xmake` installed, perhaps from [`scoop`](https://scoop.sh/). Then run the following:
 ```
 xmake
-xmake install --installdir=bin
+xmake install --installdir=.
 ```
 
 ## Examples
